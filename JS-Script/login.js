@@ -15,7 +15,7 @@ function login() {
 
   // Check credentials
   if (username === DEFAULT_USERNAME && password === DEFAULT_PASSWORD) {
-    // Success - show alert and redirect or do something
+    //Show Success 
     alert("Login successful!");
     console.log("Login successful for user:", username);
     
