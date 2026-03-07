@@ -37,7 +37,7 @@
   </head>
   <body class="bg-base-200 min-h-screen py-10">
     <header
-      class="w-full max-w-md mx-auto bg-white border border-0 shadow-lg rounded-lg text-center space-y-4 p-8"
+      class="w-full max-w-md mx-auto bg-white border-0 shadow-lg rounded-lg text-center space-y-4 p-8"
     >
       <!-- Logo Image -->
       <div class="flex justify-center mb-4">
@@ -51,21 +51,31 @@
 
       <!-- Login Form -->
       <section>
-        <fieldset
-          class="fieldset rounded-box p-4"
-        >
+        <fieldset class="fieldset rounded-box p-4">
           <label class="label">Username</label>
-          <input type="text" class="input w-full" placeholder="Enter Your username" />
+          <input
+            type="text"
+            id="username"
+            class="input w-full"
+            placeholder="Enter Your username"
+          />
           <label class="text-[#4A00FF] text-left">Default: admin</label>
 
           <label class="label">Password</label>
-          <input type="password" class="input w-full" placeholder="Enter Your Password"/>
+          <input
+            type="password"
+            id="password"
+            class="input w-full"
+            placeholder="Enter Your Password"
+          />
           <label class="text-[#4A00FF] text-left">Default: admin123</label>
 
-          <button class="btn btn-neutral mt-4">Login</button>
+          <button id="login-btn" class="btn btn-primary mt-4">Login</button>
         </fieldset>
       </section>
     </header>
 
+    <!-- Login Script -->
+    <script src="./JS-Script/login.js"></script>
   </body>
 </html>
