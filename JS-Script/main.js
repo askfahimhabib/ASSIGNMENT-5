@@ -85,7 +85,7 @@ function updateIssueCounts() {
   }
 
   const count = filteredIssues.length;
-  issueCountElement.textContent = `${count} ${countLabel}${count !== 1 ? "s" : ""}`;
+  issueCountElement.textContent = `${count} ${countLabel}`;
   openCountElement.textContent = openCount;
   closedCountElement.textContent = closedCount;
 }
