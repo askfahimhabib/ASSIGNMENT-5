@@ -177,6 +177,15 @@
     </main>
 
     <!-- JavaScript -->
+    <script>
+      // Verify
+      const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+
+      if (!isLoggedIn || isLoggedIn !== "true") {
+        //if not verified, redirect to login page
+        window.location.href = "index.html";
+      }
+    </script>
     <script src="./JS-Script/main.js"></script>
   </body>
 </html>
