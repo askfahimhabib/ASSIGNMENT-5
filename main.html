@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Daisy and Tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font Family -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+    </style>
+    <style>
+      * {
+        font-family: "Geist", sans-serif;
+      }
+
+      .border-open {
+        border-top-color: #22c55e;
+      }
+
+      .border-closed {
+        border-top-color: #9333ea;
+      }
+    </style>
+    <!-- Fav Icon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/github-logo.png"
+      type="image/x-icon"
+    />
+    <title>GitHub Issue Tracker</title>
+  </head>
+
+  <body class="bg-base-200 min-h-screen">
+    <header>
+      <!-- Navbar -->
+      <section>
+        <div class="navbar bg-base-100 shadow-sm flex justify-between">
+          <!-- Logo AND Title -->
+          <section>
+            <div class="flex justify-center items-center gap-2">
+              <img class="w-[10%]" src="./assets/github-logo.png" alt="" />
+              <a class="text-xl font-bold">GitHub Issue Tracker</a>
+            </div>
+          </section>
+
+          <!-- Searchbox and add button-->
+          <section class="flex gap-2">
+            <div>
+              <label class="input">
+                <svg
+                  class="h-[1em] opacity-50"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </g>
+                </svg>
+                <input
+                  type="search"
+                  id="search-input"
+                  required
+                  placeholder="Search Issues"
+                />
+              </label>
+            </div>
+
+            <!-- Button -->
+            <button class="btn btn-active btn-primary">
+              <i class="fa-solid fa-plus"></i>New Issue
+            </button>
+          </section>
+        </div>
+      </section>
+    </header>
+
+    <main class="m-4">
+      <!-- Toggle bar -->
+      <section
+        class="w-11/12 mx-auto bg-white border border-hidden shadow-xl rounded-md p-3"
+      >
+        <button class="btn btn-soft btn-primary filter-btn" data-filter="all">
+          All
+        </button>
+        <button class="btn btn-soft btn-primary filter-btn" data-filter="open">
+          Open
+        </button>
+        <button
+          class="btn btn-soft btn-primary filter-btn"
+          data-filter="closed"
+        >
+          Closed
+        </button>
+      </section>
+
+      <!-- Card Container Header -->
+      <section
+        class="w-11/12 mx-auto bg-white border border-hidden shadow-xl rounded-md p-3 mt-5 flex justify-between"
+      >
+        <!-- Left Side -->
+        <div class="flex items-center gap-2">
+          <!-- Left Image -->
+          <div class="left">
+            <img src="./assets/Aperture.png" alt="" />
+          </div>
+          <!-- Left Text -->
+          <div>
+            <h2 class="text-xl font-semibold" id="issue-count">0 Issue</h2>
+            <p class="text-gray-500">Track and manage your project issues</p>
+          </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="flex items-center gap-6 text-gray-700 font-medium">
+          <div class="flex items-center gap-2">
+            <span class="h-4 w-4 rounded-full bg-[#00a669]"></span>
+            <span id="open-count">0</span>
+            <span>Open</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="h-4 w-4 rounded-full bg-[#a855f7]"></span>
+            <span id="closed-count">0</span>
+            <span>Closed</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card container-->
+      <section class="m-5 w-11/12 mx-auto">
+        <!-- Loader -->
+        <div id="loader" class="flex justify-center items-center py-12">
+          <span class="loading loading-spinner loading-lg text-primary"></span>
+        </div>
+
+        <!-- Cards Container -->
+        <div
+          id="cards-container"
+          class="grid grid-cols-1 md:grid-cols-4 gap-4 hidden"
+        ></div>
+      </section>
+
+      <!-- Modal -->
+      <section>
+        <dialog id="task_modal" class="modal bg-slate-900/20">
+          <div
+            class="modal-box max-w-2xl p-8 bg-white rounded-xl shadow-2xl font-sans"
+          >
+            <!-- Content load dynamically -->
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="./JS-Script/main.js"></script>
+  </body>
+</html>
