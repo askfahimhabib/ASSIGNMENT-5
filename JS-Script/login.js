@@ -12,6 +12,9 @@ function login() {
 
   // Check credentials
   if (username === DEFAULT_USERNAME && password === DEFAULT_PASSWORD) {
+    sessionStorage.setItem("isLoggedIn", "true");
+    sessionStorage.setItem("username", username);
+
     // Redirect to main page
     window.location.href = "main.html";
   } else {
