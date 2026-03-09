@@ -46,21 +46,23 @@
 
   <body class="bg-base-200 min-h-screen">
     <header>
-      <!-- Navbar -->
       <section>
-        <div class="navbar bg-base-100 shadow-sm flex justify-between">
-          <!-- Logo AND Title -->
-          <section>
-            <div class="flex justify-center items-center gap-2">
-              <img class="w-[10%]" src="./assets/github-logo.png" alt="" />
+        <div class="navbar bg-base-100 shadow-sm flex-col lg:flex-row gap-4 py-4 px-4 h-auto">
+          
+          <section class="flex-1 flex justify-center lg:justify-start w-full">
+            <div class="flex items-center gap-2">
+              <img
+                class="w-8 h-auto"
+                src="./assets/github-logo.png"
+                alt="GitHub Logo"
+              />
               <a class="text-xl font-bold">GitHub Issue Tracker</a>
             </div>
           </section>
 
-          <!-- Searchbox and add button-->
-          <section class="flex gap-2">
-            <div>
-              <label class="input">
+          <section class="flex flex-col sm:flex-row gap-2 w-full lg:w-auto justify-center items-center">
+            <div class="w-full sm:w-auto">
+              <label class="input w-full flex items-center gap-2">
                 <svg
                   class="h-[1em] opacity-50"
                   xmlns="http://www.w3.org/2000/svg"
@@ -80,17 +82,18 @@
                 <input
                   type="search"
                   id="search-input"
+                  class="grow"
                   required
                   placeholder="Search Issues"
                 />
               </label>
             </div>
 
-            <!-- Button -->
-            <button class="btn btn-active btn-primary">
+            <button class="btn btn-active btn-primary w-full sm:w-auto shrink-0">
               <i class="fa-solid fa-plus"></i>New Issue
             </button>
           </section>
+
         </div>
       </section>
     </header>
@@ -98,7 +101,7 @@
     <main class="m-4">
       <!-- Toggle bar -->
       <section
-        class="w-11/12 mx-auto bg-white border border-hidden shadow-xl rounded-md p-3"
+        class="w-11/12 mx-auto bg-white border border-hidden shadow-xl rounded-md p-3 flex flex-wrap gap-2"
       >
         <button class="btn btn-soft btn-primary filter-btn" data-filter="all">
           All
@@ -116,23 +119,27 @@
 
       <!-- Card Container Header -->
       <section
-        class="w-11/12 mx-auto bg-white border border-hidden shadow-xl rounded-md p-3 mt-5 flex justify-between"
+        class="w-11/12 mx-auto bg-white border border-hidden shadow-xl rounded-md p-3 mt-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
       >
         <!-- Left Side -->
         <div class="flex items-center gap-2">
           <!-- Left Image -->
           <div class="left">
-            <img src="./assets/Aperture.png" alt="" />
+            <img src="./assets/Aperture.png" alt="" class="w-8 h-8" />
           </div>
           <!-- Left Text -->
           <div>
             <h2 class="text-xl font-semibold" id="issue-count">0 Issue</h2>
-            <p class="text-gray-500">Track and manage your project issues</p>
+            <p class="text-gray-500 text-sm">
+              Track and manage your project issues
+            </p>
           </div>
         </div>
 
         <!-- Right Side -->
-        <div class="flex items-center gap-6 text-gray-700 font-medium">
+        <div
+          class="flex items-center gap-4 sm:gap-6 text-gray-700 font-medium text-sm sm:text-base"
+        >
           <div class="flex items-center gap-2">
             <span class="h-4 w-4 rounded-full bg-[#00a669]"></span>
             <span id="open-count">0</span>
